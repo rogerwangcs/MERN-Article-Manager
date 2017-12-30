@@ -3,17 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "material-ui": "^0.20.0",
     "mongodb": "^3.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17"
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "react-table": "^6.7.6"
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "nodemon src/Server/server.js",
+    "dev": "nodemon src/server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

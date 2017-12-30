@@ -20,7 +20,7 @@ class ArticleTable extends Component {
     }, {
       Header: 'Type',
       accessor: 'type',
-      filterable: false,
+      filterable: true,
       maxWidth: 80,
     }, {
       Header: 'Date Modified',
