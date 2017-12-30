@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+}
+
+
+#form1 {
+  margin: 0 auto;
+  width: 800px;
+}
+
+@media (max-width: 840px) {
+  #form1 {
+    width: 95vw;
+  }
+}
+
+/* Nav css */
+#nav {
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  position: fixed;
+  width: 250px;
+
+}
+
+.Link {
+  text-decoration: none;
+}
+
+
+@media (max-width: 800px) {
+  #nav {
+    width: 30vw;
+  }
+}
+
+/* Page */
+#page {
+  position: absolute;
+  top: 0px;
+  left: 250px;
+  width: calc(100vw - 250px);
+  height: 100vh;
+}
+@media (max-width: 800px) {
+  #page {
+    left: 30vw;
+  }
+}
+
+#home {
+  padding-left: 3vw;
+}
+.PostItem {
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 2px 10px 1px;
+  width: 800px;
+}
+
+@media (max-width: 1100px) {
+  .PostItem {
+    width: calc(95vw - 250px);
+  }
+}
+@media (max-width: 800px) {
+  .PostItem {
+    width: 63vw;
+  }
+}
+
+.tableDiv {
+  width: 600px;
+  height: 80vh;
+  margin: auto;
+}
+@media (max-width: 800px) {
+  .tableDiv {
+    width: 60vw;
+  }
+}
+
+.addArticleBox {
+  z-index: 200;
+  top: 10vh;
+  left: 10vw;
+  position: absolute;
+  background-color: lightgray;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 10px;
+}
+
+
+
