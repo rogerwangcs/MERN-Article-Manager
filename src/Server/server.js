@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //CORS access
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
@@ -40,7 +41,7 @@ MongoClient.connect(uri, function(err, client) {
   //  });
 
   //gets article given mongo ObjectId or entire collection if no given ID
-  app.get('/api/articles', (req, res) => {
+  app.get('/api/articles', (req, res, next) => {
     var query = {};
     if (req.query._id != undefined) {
       query._id = ObjectId(req.query._id);
@@ -74,7 +75,7 @@ MongoClient.connect(uri, function(err, client) {
   });
 
   //posts a new article with given body parameters of article json info.
-  app.post('/api/articles', (req, res) => {
+  app.post('/api/articles', (req, res, next) => {
     db.collection('articles').save(req.body, (err, result) => {
       if (err) {
         res.sendStatus(400) //400 bad request
@@ -88,7 +89,7 @@ MongoClient.connect(uri, function(err, client) {
   });
 
   //deletes the article with the given mongoDB ObjectID
-  app.delete('/api/articles', function (req, res) {
+  app.delete('/api/articles', (req, res, next) => {
     var query = {};
     if (req.query._id) {
       query._id = ObjectId(req.query._id);
@@ -99,7 +100,7 @@ MongoClient.connect(uri, function(err, client) {
   });
 
   //update the article with the given mongoDB ObjectID
-  app.put('/api/articles', function (req, res) {
+  app.put('/api/articles', (req, res, next) => {
     var newInfo = req.body;
     delete newInfo._id;
     db.collection('articles').replaceOne(
