@@ -12,6 +12,10 @@ class ArticleTable extends Component {
     super(props);
 
     const columns = [{
+      Header: 'ID',
+      accessor: '_id',
+      maxWidth: 200,
+    },{
       Header: 'Title',
       accessor: 'title',
       minWidth: 300,
